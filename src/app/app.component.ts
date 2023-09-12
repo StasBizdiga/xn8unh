@@ -15,7 +15,7 @@ import {
 export class AppComponent {
   //@ViewChild(CdkDropListGroup) listGroup: CdkDropListGroup<CdkDropList>;
   @ViewChild(CdkDropList) editor: CdkDropList;
-
+ 
   public items: Array<any> = [
     {
       name: '1',
