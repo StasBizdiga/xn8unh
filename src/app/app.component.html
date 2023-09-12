@@ -1,0 +1,29 @@
+<button (click)="add()">Add</button> <button (click)="shuffle()">Shuffle
+</button>
+<br/>
+<br/>
+DEBUG LIST: 
+
+<ul class="example-list"><li *ngFor="let item of items">{{ item.name }}</li></ul>
+
+
+<br/>
+
+<h3>Editor</h3>
+<div class="flex-grid" cdkDropListGroup>
+  <div cdkDropList 
+  [cdkDropListEnterPredicate]="enter" 
+  (cdkDropListDropped)="drop()" 
+  #editor>
+</div>
+  <div cdkDropList 
+      *ngFor="let item of items" 
+      [cdkDropListEnterPredicate]="enter" 
+      (cdkDropListDropped)="drop()">
+      <div cdkDrag 
+          class="item span-{{item.width}}">
+            {{item.name}}
+            <input min="1" max="4" value="4" step="1" type="number" class='form-control mini' [(ngModel)]="item.width" style=" width: 40px;" />
+       </div>
+  </div>
+</div> 
